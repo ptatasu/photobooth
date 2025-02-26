@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photobooth</title>
+</head>
+<body>
+    <video id="webcamVid" autoplay></video>
+    <script>
+        const webcamVid = document.getElementById("webcamVid");
+
+        navigator.mediaDevices.getUserMedia({video: true}).then((stream) => {
+            webcamVid.srcObject = stream;
+        }).catch((e) => {
+            console.log(e);
+        })
+    </script>
+</body>
+</html>
