@@ -48,3 +48,8 @@ body {
     width: fit-content;
     cursor: pointer;
 }
+
+body .container canvas{
+    border: 3px solid black;
+}
+    

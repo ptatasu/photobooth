@@ -1,41 +1,13 @@
-new FinisherHeader({
-    "count": 100,
-    "size": {
-      "min": 1,
-      "max": 2,
-      "pulse": 2
-    },
-    "speed": {
-      "x": {
-        "min": 0,
-        "max": 0.4
-      },
-      "y": {
-        "min": 0,
-        "max": 0.6
-      }
-    },
-    "colors": {
-      "background": "#201e30",
-      "particles": [
-        "#fbfcca",
-        "#d7f3fe",
-        "#ffd0a7"
-      ]
-    },
-    "blending": "overlay",
-    "opacity": {
-      "center": 1,
-      "edge": 0
-    },
-    "skew": -2,
-    "shapes": [
-      "s",
-      "t"
-    ]
-  });
+const snap = document.getElementById("snap");
+const url = document.getElementById("url");
 
-  const Capture = () => {
+const Capture = () => {
     window.location.assign("cam.html")
   } 
-  FinisherHeader();
+
+  
+const Snapshot = () => {
+    canvas.getContext('2d').drawImage(webcamVid, 0, 0, canvas.width, canvas.height);
+    let data_url = canvas.toDataURL('image/jpeg');
+    url.value = data_url;
+}

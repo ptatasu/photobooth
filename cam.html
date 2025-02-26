@@ -6,15 +6,20 @@
     <title>Photobooth</title>
 </head>
 <body>
-    <video id="webcamVid" autoplay></video>
+    <div class="container">
+        <video id="webcamVid" height="400" width="400" autoplay></video>
+        <canvas id="canvas" height="400" width="400"></canvas>
+        <button id="snap" onclick="Snapshot()">Take snap</button>
+        <textarea id="url" readonly></textarea>
+    </div>
     <script>
         const webcamVid = document.getElementById("webcamVid");
-
         navigator.mediaDevices.getUserMedia({video: true}).then((stream) => {
             webcamVid.srcObject = stream;
         }).catch((e) => {
             console.log(e);
         })
     </script>
+    <script src="js/script.js" type="text/javascript"></script>
 </body>
 </html>
