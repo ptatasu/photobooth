@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.container {
+    width: 90%;
+    border: 1px, solid, red;
+    display: grid;
+    grid-template-areas:'stream imgcont'
+                        'stream imgcont'
+                        'snap imgcont';
+                        align-items: center;
+}
+#countdown {
+    grid-area: stream;
+    position: absolute;
+    left: 10%;
+    border: 1px, solid, snow;
+    color: snow;
+    /* height: 350px;
+    width: 350px; */
+}
+#webcamVid {
+    grid-area: stream;
+}
+#snap {
+    grid-area: snap;
+}
+.img-cont {
+    grid-area: imgcont;
+    border: 1px, solid, blue;
+}
+canvas, #nextBtn {
+    display: none;
+}
+.button {
+    justify-items: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px, solid, black;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: small;
+    background-color: white;
+    height: 30px;
+    width: 150px;
+    cursor: pointer;
+}

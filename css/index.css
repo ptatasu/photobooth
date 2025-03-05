@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.header {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  z-index: -999;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  justify-items: center;
+  align-content: center;
+}
+
+#title {
+  font-size: 4em;
+  font-family: "Anton", serif;
+  font-weight: 400;
+  font-style: normal;
+  cursor: default;
+  color: whitesmoke;
+}
+
+.button {
+  margin-top: 50px;
+  justify-items: center;
+  align-content: center;
+  border-radius: 10px;
+  border: 1px, solid, black;
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: small;
+  background-color: white;
+  height: 30px;
+  width: 150px;
+  cursor: pointer;
+}
+.button p::after {
+  content: "\00bb";
+  position: relative;
+  left: 100px;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+.button p {
+  font-size: 1rem;
+}
+.button:hover {
+  box-shadow: 0px 0px 50px -10px rgb(148, 148, 148) inset;
+}
+.start-btn {
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+.start-btn:hover p::after {
+  position: relative;
+  left: 0;
+  opacity: 100%; 
+}
+.start-btn svg {
+  position: relative;
+  bottom: -5px;
+  font-size: 1rem;
+}
+.label {
+  color: whitesmoke;
+  font-family: "Poppins", serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 0.8rem;
+  cursor: default;
+}
+#welcome {
+  cursor: default;
+  position: relative;
+  text-transform: uppercase;
+  bottom: -30px;
+  color: whitesmoke;
+  font-size: 1rem;
+  font-family: "Poppins", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.style-btn {
+  opacity: 0;
+  cursor: default;
+}
+.style-container{
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+}
