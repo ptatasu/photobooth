@@ -2,21 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="css/cam.css">
     <title>Photobooth</title>
 </head>
 <body>
     <div class="container">
-        <video id="webcamVid" height="400" width="650" autoplay></video>
+        <video id="webcamVid" autoplay></video>
         <div id="countdown">sadasd</div>
-        <canvas id="canvas" height="400" width="650"></canvas>
+        <canvas id="canvas" height="340" width="480"></canvas>
         <div class="button" id="snap" onclick="Snapshot(3)"><p>Take snap</p></div>
         <div class="img-cont">
-            <img src="" class="image_1">
+            <img src=""  class="image_1">
             <img src="" class="image_2">
             <img src="" class="image_3">
             <img src="" class="image_4">

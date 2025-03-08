@@ -1,35 +1,58 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  box-sizing: border-box;
+}
 body {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
 }
 .container {
     width: 90%;
-    border: 1px, solid, red;
+    border: 1px solid red;
     display: grid;
-    grid-template-areas:'stream imgcont'
-                        'stream imgcont'
-                        'snap imgcont';
+    grid-template-areas:'stream stream'
+                        'count snap'
+                        'imgcont imgcont';
                         align-items: center;
 }
 #countdown {
-    grid-area: stream;
+    grid-area: count;
     position: absolute;
-    left: 10%;
+    /* left: 10%; */
     border: 1px, solid, snow;
-    color: snow;
+    color: black;
     /* height: 350px;
     width: 350px; */
 }
+#webcamVid::before {
+    content: ".";
+}
 #webcamVid {
     grid-area: stream;
+    height: 310px;
+    aspect-ratio: auto;
+    width: 440px;
+    object-fit: cover;
+    transform: rotateY(180deg);
 }
 #snap {
     grid-area: snap;
 }
 .img-cont {
     grid-area: imgcont;
-    border: 1px, solid, blue;
+    border: 1px solid blue;
+    transform: rotateY(180deg);
+    object-fit: cover;
+}
+.img-cont img {
+    object-fit: cover;
+    width: 440px;
+    /* height: 100%; */
 }
 canvas, #nextBtn {
     display: none;

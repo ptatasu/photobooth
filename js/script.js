@@ -45,7 +45,7 @@ const Snapshot = (e) => {
   //   if (e == -1) {
       canvas
         .getContext("2d")
-        .drawImage(webcamVid, 0, 0, canvas.width, canvas.height);
+        .drawImage(webcamVid, 0, 150, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
       // clearInterval(interval);
       countdown.innerHTML = ``;
       let data_url = canvas.toDataURL("image/jpeg");
