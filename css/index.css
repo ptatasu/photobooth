@@ -8,7 +8,9 @@
 }
 
 body {
+  user-select: none;
   font-size: 1.6rem;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .header {
@@ -21,12 +23,15 @@ body {
 .container {
   height: 100vh;
   width: 100%;
-  justify-items: center;
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 200px;
 }
 
 #title {
-  font-size: 4em;
+  font-size: 3em;
   font-family: "Anton", serif;
   font-weight: 400;
   font-style: normal;
@@ -36,10 +41,11 @@ body {
 
 .button {
   margin-top: 50px;
-  justify-items: center;
-  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
-  border: 1px, solid, black;
+  border: 1px solid black;
   font-family: "Poppins", serif;
   font-weight: 300;
   font-style: normal;
@@ -48,6 +54,7 @@ body {
   height: 30px;
   width: 150px;
   cursor: pointer;
+  outline: none;
 }
 .button p::after {
   content: "\00bb";
@@ -71,11 +78,6 @@ body {
   left: 0;
   opacity: 100%; 
 }
-.start-btn svg {
-  position: relative;
-  bottom: -5px;
-  font-size: 1rem;
-}
 .label {
   color: whitesmoke;
   font-family: "Poppins", serif;
@@ -88,7 +90,7 @@ body {
   cursor: default;
   position: relative;
   text-transform: uppercase;
-  bottom: -30px;
+  bottom: -10px;
   color: whitesmoke;
   font-size: 1rem;
   font-family: "Poppins", serif;
@@ -100,7 +102,23 @@ body {
   cursor: default;
 }
 .style-container{
-  width: 400px;
-  display: flex;
-  justify-content: space-around;
+  opacity: 0;
+  display: grid;
+  grid-template-areas: 'btn1 btn2'
+  'sample1 sample2';
+  grid-gap: 20px;
+  grid-template-columns: 200px;
+  justify-items: center;
+  /* transition: 300ms; */
+  transform: translateY(400px);
+  transition: all .3s ease-in-out;
+}
+.sample {
+  border: 3px solid black;
+}
+#style_1 {
+  grid-area: btn1;
+}
+#style_2 {
+  grid-area: btn2;
 }
