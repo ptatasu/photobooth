@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/cam.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/cam.css" />
     <title>Photobooth</title>
-</head>
-<body>
-    <div id="countdown">sadasd</div>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="countdown">5</div>
+    </div>
     <div class="container">
-        <video id="webcamVid" autoplay></video>
-        <canvas id="canvas" height="340" width="480"></canvas>
-        <p class="label">Snapshot Delay (Default Value 5s) :</p>
-        <input type="number" name="sec" id="text" value="5">
-        <p class="titleLabel">MomentSnap</p>
-        <div class="button" id="snap" onclick="Snapshot()"><p>Auto snap</p></div>
-        <div class="img-cont">
-            <img src=""  class="image_1">
-            <img src="" class="image_2">
-            <img src="" class="image_3">
-            <img src="" class="image_4">
-        </div>
-        <div class="button" id="nextBtn" onclick="next()"><p>hahaha</p></div>
+      <video id="webcamVid" autoplay></video>
+      <canvas id="canvas" height="340" width="480"></canvas>
+      <p class="label">Snapshot Delay (Default Value 5s) :</p>
+      <input type="number" name="sec" id="text" value="5" />
+      <p class="titleLabel">MomentSnap</p>
+      <div class="button" id="snap" onclick="Snapshot()"><p>Manual snap</p></div>
+      <div class="button" id="retakeBtn" onclick="retake()"><p>Retake</p></div>
+      <div class="button" id="auto" onclick="AutoSnap()"><p>Auto snap</p></div>
+      <div class="button" id="nextBtn" onclick="next()"><p>Next</p></div>
+      <div class="img-cont">
+        <img src="" class="image_1" />
+        <img src="" class="image_2" />
+        <img src="" class="image_3" />
+        <img src="" class="image_4" />
+      </div>
     </div>
     <script src="js/script.js" type="text/javascript"></script>
-    <script>Camera();</script>
-</body>
+    <script>
+      Camera();
+    </script>
+  </body>
 </html>
