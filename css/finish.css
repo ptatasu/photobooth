@@ -49,3 +49,72 @@ img{
     border-radius: 10px;
     border: 2px solid white;
 }
+.cnm-icon {
+    left: 519px;
+    position: relative;
+    bottom: 1505px;
+    height: 100px;
+    width: 200px;
+    aspect-ratio: auto;
+    border: none;
+    opacity: 0;
+}
+.cnm-icon-left {
+    right: 320px;
+    transform: rotatey(180deg);
+    position: relative;
+    bottom: 575px;
+    height: 220px;
+    width: 260px;
+    border: none;
+    opacity: 0;
+}
+.cnm-icon-bottom {
+    left: 445px;
+    position: relative;
+    bottom: 370px;
+    height: 220px;
+    width: 300px;
+    border: none;
+    opacity: 0;
+}
+.date{
+    position: relative;
+    color: white;
+    bottom: 380px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.7rem;
+}
+.title{
+    position: relative;
+    color: white;
+    bottom: 400px;
+    text-align: center;
+    font-family: cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 5.7rem;
+}
+.button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+    background-color: white;
+    height: 80px;
+    width: 200px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  /* food stickers next */

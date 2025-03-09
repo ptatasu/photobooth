@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
@@ -12,39 +15,51 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="img-container-1">
-        <div class="background1">
-            <div class="col-1">
-                <img src="" class="image_1" oncontextmenu="return false;">
-            </div>
-            <div class="col-2">
-                <img src="" class="image_2" oncontextmenu="return false;">
-            </div>
-            <div class="col-3">
-                <img src="" class="image_3" oncontextmenu="return false;">
-            </div>
-            <div class="col-4">
-                <img src="" class="image_4" oncontextmenu="return false;">
-            </div>
-        </div>
-    </div>
-    <div class="img-container-2">
-        <div class="background2">
-            <div class="col-1">
-                <img src="" class="image_1" oncontextmenu="return false;">
-            </div>
-            <div class="col-2">
-                <img src="" class="image_2" oncontextmenu="return false;">
-            </div>
-            <div class="col-3">
-                <img src="" class="image_3" oncontextmenu="return false;">
-            </div>
-            <div class="col-4">
-                <img src="" class="image_4" oncontextmenu="return false;">
+    <div class="grid">
+        <div class="img-container-1">
+            <div class="background1">
+                <div class="col-1">
+                    <img src="" class="image_1" oncontextmenu="return false;">
+                </div>
+                <div class="col-2">
+                    <img src="" class="image_2" oncontextmenu="return false;">
+                </div>
+                <div class="col-3">
+                    <img src="" class="image_3" oncontextmenu="return false;">
+                </div>
+                <div class="col-4">
+                    <img src="" class="image_4" oncontextmenu="return false;">
+                </div>
+                <img id="dsn" src="img/assets/cnm-top.png" class="cnm-icon">
+                <img id="dsn-right" src="img/assets/cnm-left.png" class="cnm-icon-left">
+                <img id="dsn-bottom" src="img/assets/cnm-bottom.png" class="cnm-icon-bottom">
+                <p class="title">Happy Birthday</p>
+                <p class="date">March 24, 2025</p>
             </div>
         </div>
+        <div class="img-container-2">
+            <div class="background2">
+                <div class="col-1">
+                    <img src="" class="image_1" oncontextmenu="return false;">
+                </div>
+                <div class="col-2">
+                    <img src="" class="image_2" oncontextmenu="return false;">
+                </div>
+                <div class="col-3">
+                    <img src="" class="image_3" oncontextmenu="return false;">
+                </div>
+                <div class="col-4">
+                    <img src="" class="image_4" oncontextmenu="return false;">
+                </div>
+            </div>
+        </div>
+        <div class="stickerBtn">
+            <div onclick="sticker = 'cnm'; checkStick()" class="button" id="cnm">cinammon</div>
+            <div onclick="sticker = 'food'; checkStick()" class="button" id="food">food</div>
+            <div onclick="sticker = 'none'; checkStick()" class="button" id="none">none</div>
+        </div>
     </div>
-    <a id="download">Here</a>
+    <a class="button" id="download">Download</a>
     <script src="js/download.js"></script>
     <script src="js/script.js"></script>
     <script>Load()</script>
