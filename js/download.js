@@ -1,4 +1,4 @@
-// $(document).ready(function(){
+$(document).ready(function(){
 
 //     const element = $(".img-container");
 
@@ -15,10 +15,11 @@
             // });
             
 $("#download").on('click', function(){
-        domtoimage.toBlob(document.querySelector('.img-container'))
+        domtoimage.toBlob(document.querySelector('.img-container-1'))
         .then(function (blob) {
             window.saveAs(blob, 'image.png');
         });
+});
 });
 
 // document.getElementById("download").onmousedown(save()); 1442 2192

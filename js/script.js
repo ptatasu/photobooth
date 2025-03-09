@@ -11,6 +11,7 @@ const image_2 = document.querySelector(".image_2");
 const image_3 = document.querySelector(".image_3");
 const image_4 = document.querySelector(".image_4");
 let locked = false;
+let type = "";
 
 let images = {};
 
@@ -27,8 +28,9 @@ const Load = () => {
   image_4.src = images[3];
 };
 
-const Capture = () => {
+const Capture = (e) => {
   window.location.assign("cam.html");
+  window.localStorage.setItem("type", e);
 };
 
 const reset = () => {
@@ -184,10 +186,29 @@ const AutoSnap = () => {
   }
 };
 const retake = () => {
-  window.location.assign("cam.html");
+  // window.location.assign("cam.html");
+  image_1.src = '';
+  image_2.src = '';
+  image_3.src = '';
+  image_4.src = '';
+  count = 0;
+  image_1.style.border = "none";
+  image_2.style.border = "none";
+  image_3.style.border = "none";
+  image_4.style.border = "none";
+  auto.style.display = "flex";
+  snap.style.display = "flex";
+  nextBtn.style.display = "none";
+  retakeBtn.style.display = "none";
+  locked = false;
+  reset();
 };
 const next = () => {
-  window.location.assign("done.html");
+  if (window.localStorage.type == 1) {
+    window.location.assign("finish.html");
+  } else {
+    window.location.assign("hahahah.html");
+  }
   Save(JSON.stringify(images));
 };
 const Camera = () => {
