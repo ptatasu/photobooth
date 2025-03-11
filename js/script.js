@@ -13,6 +13,7 @@ const image_4 = document.querySelector(".image_4");
 let locked = false;
 let type = "";
 
+
 let images = {};
 
 const Save = (e) => {
@@ -23,8 +24,8 @@ const Save = (e) => {
 const Load = () => {
   images = JSON.parse(window.localStorage.images);
   image_1.src = images[0];
-  image_3.src = images[1];
-  image_2.src = images[2];
+  image_2.src = images[1];
+  image_3.src = images[2];
   image_4.src = images[3];
 };
 

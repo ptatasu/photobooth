@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body onload="checkColor(); checkDate();">
     <div class="grid">
         <div class="img-container-1">
             <div class="background1">
@@ -30,11 +30,12 @@
                 <div class="col-4">
                     <img src="" class="image_4" oncontextmenu="return false;">
                 </div>
-                <img id="dsn" src="img/assets/cnm-top.png" class="cnm-icon">
-                <img id="dsn-right" src="img/assets/cnm-left.png" class="cnm-icon-left">
-                <img id="dsn-bottom" src="img/assets/cnm-bottom.png" class="cnm-icon-bottom">
-                <p class="title">Happy Birthday</p>
-                <p class="date">March 24, 2025</p>
+                <img id="dsn-right" src="" class="cnm-icon-right">
+                <img id="dsn-left" src="" class="cnm-icon-left">
+                <img id="dsn-top" src="" class="cnm-icon-top">
+                <img id="dsn" src="" class="cnm-icon">
+                <p class="title"></p>
+                <p class="date"></p>
             </div>
         </div>
         <div class="img-container-2">
@@ -53,10 +54,27 @@
                 </div>
             </div>
         </div>
+        <div class="line"></div>
+        <p class="label" id="stkLabel">Stickers</p>
         <div class="stickerBtn">
-            <div onclick="sticker = 'cnm'; checkStick()" class="button" id="cnm">cinammon</div>
-            <div onclick="sticker = 'food'; checkStick()" class="button" id="food">food</div>
+            <div onclick="sticker = 'cnm'; checkStick()" class="button" id="cnm">Cinammon</div>
+            <div onclick="sticker = 'gdtm'; checkStick()" class="button" id="food">Gudetama</div>
             <div onclick="sticker = 'none'; checkStick()" class="button" id="none">none</div>
+        </div>
+        <p class="label" id="bgLabel">Background Color</p>
+        <div class="bgcolor">
+            <div onclick="color = 'black'; checkColor()" class="bg-button" id="none">black</div>
+            <div onclick="color = 'blue'; checkColor()" class="bg-button" id="none">blue</div>
+            <div onclick="color = 'green'; checkColor()" class="bg-button" id="none">green</div>
+            <div onclick="color = 'orange'; checkColor()" class="bg-button" id="none">orange</div>
+            <div onclick="color = 'pink'; checkColor()" class="bg-button" id="none">pink</div>
+            <div onclick="color = 'red'; checkColor()" class="bg-button" id="none">red</div>
+            <div onclick="color = 'violet'; checkColor()" class="bg-button" id="none">violet</div>
+            <div onclick="color = 'yellow'; checkColor()" class="bg-button" id="none">yellow</div>
+        </div>
+        <div class="int">
+            <input type="text" name="title" id="title" maxlength="14">
+            <input type="date" name="date" id="date">
         </div>
     </div>
     <a class="button" id="download">Download</a>
