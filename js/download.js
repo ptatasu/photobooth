@@ -1,25 +1,42 @@
-$(document).ready(function () {
-  $("#download").on("click", function () {
-    domtoimage
-      .toBlob(document.querySelector(".img-container-1"))
-      .then(function (blob) {
-        window.saveAs(blob, "image.png");
-      });
-  });
-});
+// $(document).ready(function () {
+  // $("#download").on("click", function () {
+    // if (window.localStorage.type == '1') {
+    //   domtoimage
+    //   .toBlob(document.querySelector(".img-container-1"))
+    //   .then(function (blob) {
+    //     window.saveAs(blob, "image.png");
+    //   });
+    // } else {
+    //   domtoimage
+    //   .toBlob(document.querySelector(".img-container-2"))
+    //   .then(function (blob) {
+    //     window.saveAs(blob, "image.png");
+    //   });
+    // }
+//   });
+// });
 
+let body = document.getElementById("body");
+let img1 = document.querySelector(".img-container-1");
+let img2 = document.querySelector(".img-container-2");
 let dateChkbox = document.getElementById("customDate");
 let titleChkbox = document.getElementById("customTitle");
 let dateInput = document.getElementById("customDateInt");
 let titleInput = document.getElementById("customTitleInt");
 let title = document.querySelector(".title");
+let title2 = document.querySelector(".title_2");
 let date = document.querySelector(".date");
+let date2 = document.querySelector(".date_2");
 let bg1 = document.querySelector(".background1");
 let bg2 = document.querySelector(".background2");
 const icon = document.getElementById("dsn");
 const iconRight = document.getElementById("dsn-right");
 const iconLeft = document.getElementById("dsn-left");
 const iconTop = document.getElementById("dsn-top");
+const icon2 = document.getElementById("dsn_2");
+const iconRight2 = document.getElementById("dsn-right_2");
+const iconLeft2 = document.getElementById("dsn-left_2");
+const iconTop2 = document.getElementById("dsn-top_2");
 const cnm = document.getElementById("cnm");
 const food = document.getElementById("food");
 const none = document.getElementById("none");
@@ -32,10 +49,30 @@ let month = months[d.getMonth()];
 const checkStick = () => {
   console.log(sticker);
     if (sticker == "none") {
-      icon.style.opacity = "0";
+    icon.style.opacity = "0";
     iconRight.style.opacity = "0";
     iconLeft.style.opacity = "0";
     iconTop.style.opacity = "0";
+    icon2.style.opacity = "0";
+    iconRight2.style.opacity = "0";
+    iconLeft2.style.opacity = "0";
+    iconTop2.style.opacity = "0";
+    // icon2.classList.remove("cnm-icon_2");
+    // iconRight2.classList.remove("cnm-icon-right_2");
+    // iconLeft2.classList.remove("cnm-icon-left_2");
+    // iconTop2.classList.remove("cnm-icon-top_2");
+    // icon.classList.remove("cnm-icon");
+    // iconRight.classList.remove("cnm-icon-right");
+    // iconLeft.classList.remove("cnm-icon-left");
+    // iconTop.classList.remove("cnm-icon-top");
+    // icon.classList.remove("gdtm-icon");
+    // iconRight.classList.remove("gdtm-icon-right");
+    // iconLeft.classList.remove("gdtm-icon-left");
+    // iconTop.classList.remove("gdtm-icon-top");
+    // icon2.classList.remove("gdtm-icon_2");
+    // iconRight2.classList.remove("gdtm-icon-right_2");
+    // iconLeft2.classList.remove("gdtm-icon-left_2");
+    // iconTop2.classList.remove("gdtm-icon-top_2");
 } else if (sticker == "cnm"){
     icon.style.opacity = "100%";
     icon.src = "img/assets/cnm-icon.png";
@@ -45,14 +82,30 @@ const checkStick = () => {
     iconLeft.src = "img/assets/cnm-left.png";
     iconTop.style.opacity = "100%";
     iconTop.src = "img/assets/cnm-bottom.png";
+    icon2.style.opacity = "100%";
+    icon2.src = "img/assets/cnm-icon.png";
+    iconRight2.style.opacity = "100%";
+    iconRight2.src = "img/assets/cnm-right.png";
+    iconLeft2.style.opacity = "100%";
+    iconLeft2.src = "img/assets/cnm-left.png";
+    iconTop2.style.opacity = "100%";
+    iconTop2.src = "img/assets/cnm-bottom.png";
     icon.classList.add("cnm-icon");
     iconRight.classList.add("cnm-icon-right");
     iconLeft.classList.add("cnm-icon-left");
     iconTop.classList.add("cnm-icon-top");
+    icon2.classList.add("cnm-icon_2");
+    iconRight2.classList.add("cnm-icon-right_2");
+    iconLeft2.classList.add("cnm-icon-left_2");
+    iconTop2.classList.add("cnm-icon-top_2");
     icon.classList.remove("gdtm-icon");
     iconRight.classList.remove("gdtm-icon-right");
     iconLeft.classList.remove("gdtm-icon-left");
     iconTop.classList.remove("gdtm-icon-top");
+    icon2.classList.remove("gdtm-icon_2");
+    iconRight2.classList.remove("gdtm-icon-right_2");
+    iconLeft2.classList.remove("gdtm-icon-left_2");
+    iconTop2.classList.remove("gdtm-icon-top_2");
   } else if (sticker == "gdtm") {
     icon.style.opacity = "100%";
     icon.src = "img/assets/gdtm-bottom.png";
@@ -62,6 +115,14 @@ const checkStick = () => {
     iconLeft.src = "img/assets/gdtm-left.png";
     iconTop.style.opacity = "100%";
     iconTop.src = "img/assets/gdtm-top.png";
+    icon2.style.opacity = "100%";
+    icon2.src = "img/assets/gdtm-bottom.png";
+    iconRight2.style.opacity = "100%";
+    iconRight2.src = "img/assets/gdtm-right.png";
+    iconLeft2.style.opacity = "100%";
+    iconLeft2.src = "img/assets/gdtm-left.png";
+    iconTop2.style.opacity = "100%";
+    iconTop2.src = "img/assets/gdtm-top.png";
     icon.classList.add("gdtm-icon");
     iconRight.classList.add("gdtm-icon-right");
     iconLeft.classList.add("gdtm-icon-left");
@@ -70,6 +131,14 @@ const checkStick = () => {
     iconRight.classList.remove("cnm-icon-right");
     iconLeft.classList.remove("cnm-icon-left");
     iconTop.classList.remove("cnm-icon-top");
+    icon2.classList.add("gdtm-icon_2");
+    iconRight2.classList.add("gdtm-icon-right_2");
+    iconLeft2.classList.add("gdtm-icon-left_2");
+    iconTop2.classList.add("gdtm-icon-top_2");
+    icon2.classList.remove("cnm-icon_2");
+    iconRight2.classList.remove("cnm-icon-right_2");
+    iconLeft2.classList.remove("cnm-icon-left_2");
+    iconTop2.classList.remove("cnm-icon-top_2");
 }
 }
 const checkColor = () => {
@@ -102,6 +171,7 @@ const checkColor = () => {
 }
 const checkDate = () => {
   date.innerHTML = `${month} ${d.getDate()}, ${d.getFullYear()}`
+  date2.innerHTML = `${month} ${d.getDate()}, ${d.getFullYear()}`
 }
 const customTitle = () => {
   if (titleChkbox.checked) {
@@ -110,13 +180,14 @@ const customTitle = () => {
   } else {
     titleInput.disabled = true;
     title.innerHTML = '';
+    title2.innerHTML = '';
   }
 }
 const customDate = () => {
   if (dateChkbox.checked) {
     dateInput.style.opacity = "100%";
     dateInput.disabled = false;
-    dateInput.value = 0;
+    dateInput.value = "";
   } else {
     dateInput.disabled = true;
     dateInput.value = "2024-08-29";
@@ -130,8 +201,38 @@ const checkDateInput = () => {
   let dateValDay = dateVal.slice(8, 10);
   console.log(months[dateValMonth], dateValYear, dateValDay);
   date.innerHTML = `${months[dateValMonth]} ${dateValDay}, ${dateValYear}`;
+  date2.innerHTML = `${months[dateValMonth]} ${dateValDay}, ${dateValYear}`;
 }
 const checkTitleInput = () => {
   let titleVal = titleInput.value;
   title.innerHTML = titleVal;
+  title2.innerHTML = titleVal;
+}
+
+const CheckLayout = () => {
+  if (window.localStorage.type == '1') {
+    img1.style.display = "flex";
+    body.style.zoom = "0.5";
+    
+  } else {
+    img2.style.display = "flex";
+    body.style.zoom = "0.3";
+  }
+}
+
+const Down = () => {
+  if (window.localStorage.type == '1') {
+    domtoimage
+    .toBlob(document.querySelector(".img-container-1"))
+    .then(function (blob) {
+      window.saveAs(blob, "image.png");
+    }).catch(err => {console.log(err);
+    });
+  } else {
+    domtoimage
+    .toBlob(document.querySelector(".img-container-2"))
+    .then(function (blob) {
+      window.saveAs(blob, "image.png");
+    });
+  }
 }
