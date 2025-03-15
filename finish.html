@@ -59,7 +59,7 @@
         <div class="stickerBtn">
             <div onclick="sticker = 'cnm'; checkStick()" class="button" id="cnm">Cinammon</div>
             <div onclick="sticker = 'gdtm'; checkStick()" class="button" id="food">Gudetama</div>
-            <div onclick="sticker = 'none'; checkStick()" class="button" id="none">none</div>
+            <div onclick="sticker = 'none'; checkStick()" class="button" id="none">None</div>
         </div>
         <p class="label" id="bgLabel">Background Color</p>
         <div class="bgcolor">
@@ -73,8 +73,16 @@
             <div onclick="color = 'yellow'; checkColor()" class="bg-button" id="none">yellow</div>
         </div>
         <div class="int">
-            <input type="text" name="title" id="title" maxlength="14">
-            <input type="date" name="date" id="date">
+            <div style="display: flex;">
+                <label for="customTitle" class="inputlabel">Custom Title</label>
+                <input type="checkbox" name="customTitle" id="customTitle" onclick="customTitle()">
+            </div>
+            <input type="text" name="title" id="customTitleInt" placeholder="Custom Title" maxlength="18" disabled onkeyup="checkTitleInput()">
+            <div style="display: flex;">
+                <label for="customDate" class="inputlabel">Custom Date</label>
+                <input type="checkbox" name="customDate" id="customDate" onclick="customDate()">
+            </div>
+            <input type="date" name="date" id="customDateInt" value="2024-08-29" disabled onchange="checkDateInput()">
         </div>
     </div>
     <a class="button" id="download">Download</a>

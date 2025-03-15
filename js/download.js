@@ -8,6 +8,10 @@ $(document).ready(function () {
   });
 });
 
+let dateChkbox = document.getElementById("customDate");
+let titleChkbox = document.getElementById("customTitle");
+let dateInput = document.getElementById("customDateInt");
+let titleInput = document.getElementById("customTitleInt");
 let title = document.querySelector(".title");
 let date = document.querySelector(".date");
 let bg1 = document.querySelector(".background1");
@@ -98,4 +102,36 @@ const checkColor = () => {
 }
 const checkDate = () => {
   date.innerHTML = `${month} ${d.getDate()}, ${d.getFullYear()}`
+}
+const customTitle = () => {
+  if (titleChkbox.checked) {
+    titleInput.style.opacity = "100%";
+    titleInput.disabled = false;
+  } else {
+    titleInput.disabled = true;
+    title.innerHTML = '';
+  }
+}
+const customDate = () => {
+  if (dateChkbox.checked) {
+    dateInput.style.opacity = "100%";
+    dateInput.disabled = false;
+    dateInput.value = 0;
+  } else {
+    dateInput.disabled = true;
+    dateInput.value = "2024-08-29";
+    checkDate();
+  }
+}
+const checkDateInput = () => {
+  let dateVal = dateInput.value;
+  let dateValYear = dateVal.slice(0, 4);
+  let dateValMonth = dateVal.slice(6, 7)-1;
+  let dateValDay = dateVal.slice(8, 10);
+  console.log(months[dateValMonth], dateValYear, dateValDay);
+  date.innerHTML = `${months[dateValMonth]} ${dateValDay}, ${dateValYear}`;
+}
+const checkTitleInput = () => {
+  let titleVal = titleInput.value;
+  title.innerHTML = titleVal;
 }
