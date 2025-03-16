@@ -1,18 +1,18 @@
 // $(document).ready(function () {
-  // $("#download").on("click", function () {
-    // if (window.localStorage.type == '1') {
-    //   domtoimage
-    //   .toBlob(document.querySelector(".img-container-1"))
-    //   .then(function (blob) {
-    //     window.saveAs(blob, "image.png");
-    //   });
-    // } else {
-    //   domtoimage
-    //   .toBlob(document.querySelector(".img-container-2"))
-    //   .then(function (blob) {
-    //     window.saveAs(blob, "image.png");
-    //   });
-    // }
+// $("#download").on("click", function () {
+// if (window.localStorage.type == '1') {
+//   domtoimage
+//   .toBlob(document.querySelector(".img-container-1"))
+//   .then(function (blob) {
+//     window.saveAs(blob, "image.png");
+//   });
+// } else {
+//   domtoimage
+//   .toBlob(document.querySelector(".img-container-2"))
+//   .then(function (blob) {
+//     window.saveAs(blob, "image.png");
+//   });
+// }
 //   });
 // });
 
@@ -42,13 +42,26 @@ const food = document.getElementById("food");
 const none = document.getElementById("none");
 let sticker = "none";
 let color = "default";
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 const d = new Date();
 let month = months[d.getMonth()];
 
 const checkStick = () => {
   console.log(sticker);
-    if (sticker == "none") {
+  if (sticker == "none") {
     icon.style.opacity = "0";
     iconRight.style.opacity = "0";
     iconLeft.style.opacity = "0";
@@ -73,7 +86,7 @@ const checkStick = () => {
     // iconRight2.classList.remove("gdtm-icon-right_2");
     // iconLeft2.classList.remove("gdtm-icon-left_2");
     // iconTop2.classList.remove("gdtm-icon-top_2");
-} else if (sticker == "cnm"){
+  } else if (sticker == "cnm") {
     icon.style.opacity = "100%";
     icon.src = "img/assets/cnm-icon.png";
     iconRight.style.opacity = "100%";
@@ -139,8 +152,8 @@ const checkStick = () => {
     iconRight2.classList.remove("cnm-icon-right_2");
     iconLeft2.classList.remove("cnm-icon-left_2");
     iconTop2.classList.remove("cnm-icon-top_2");
-}
-}
+  }
+};
 const checkColor = () => {
   console.log(color);
   if (color == "default" || color == "black") {
@@ -168,21 +181,21 @@ const checkColor = () => {
     bg1.style.backgroundColor = "#E5DC8A";
     bg2.style.backgroundColor = "#E5DC8A";
   }
-}
+};
 const checkDate = () => {
-  date.innerHTML = `${month} ${d.getDate()}, ${d.getFullYear()}`
-  date2.innerHTML = `${month} ${d.getDate()}, ${d.getFullYear()}`
-}
+  date.innerHTML = `${month} ${d.getDate()}, ${d.getFullYear()}`;
+  date2.innerHTML = `${month} ${d.getDate()}, ${d.getFullYear()}`;
+};
 const customTitle = () => {
   if (titleChkbox.checked) {
     titleInput.style.opacity = "100%";
     titleInput.disabled = false;
   } else {
     titleInput.disabled = true;
-    title.innerHTML = '';
-    title2.innerHTML = '';
+    title.innerHTML = "";
+    title2.innerHTML = "";
   }
-}
+};
 const customDate = () => {
   if (dateChkbox.checked) {
     dateInput.style.opacity = "100%";
@@ -193,46 +206,66 @@ const customDate = () => {
     dateInput.value = "2024-08-29";
     checkDate();
   }
-}
+};
 const checkDateInput = () => {
   let dateVal = dateInput.value;
   let dateValYear = dateVal.slice(0, 4);
-  let dateValMonth = dateVal.slice(6, 7)-1;
+  let dateValMonth = dateVal.slice(6, 7) - 1;
   let dateValDay = dateVal.slice(8, 10);
   console.log(months[dateValMonth], dateValYear, dateValDay);
   date.innerHTML = `${months[dateValMonth]} ${dateValDay}, ${dateValYear}`;
   date2.innerHTML = `${months[dateValMonth]} ${dateValDay}, ${dateValYear}`;
-}
+};
 const checkTitleInput = () => {
   let titleVal = titleInput.value;
   title.innerHTML = titleVal;
   title2.innerHTML = titleVal;
-}
+};
 
 const CheckLayout = () => {
-  if (window.localStorage.type == '1') {
+  if (window.localStorage.type == "1") {
     img1.style.display = "flex";
     body.style.zoom = "0.5";
-    
   } else {
     img2.style.display = "flex";
     body.style.zoom = "0.3";
   }
-}
+};
 
 const Down = () => {
-  if (window.localStorage.type == '1') {
+  const scale = window.devicePixelRatio;
+  if (window.localStorage.type == "1") {
     domtoimage
-    .toBlob(document.querySelector(".img-container-1"))
-    .then(function (blob) {
-      window.saveAs(blob, "image.png");
-    }).catch(err => {console.log(err);
-    });
+      .toBlob(img1, {
+        height: img1.offsetHeight * scale,
+        width: img1.offsetWidth * scale,
+        style: {
+          transform: `scale(${scale})`,
+          transformOrigin: "top left",
+          width: `${img1.offsetWidth}px`,
+          height: `${img1.offsetHeight}px`,
+        },
+      })
+      .then(function (blob) {
+        window.saveAs(blob, "image.png");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   } else {
     domtoimage
-    .toBlob(document.querySelector(".img-container-2"))
-    .then(function (blob) {
-      window.saveAs(blob, "image.png");
-    });
+      .toBlob(img2, {
+        height: img2.offsetHeight * scale,
+        width: img2.offsetWidth * scale,
+        style: {
+          transform: `scale(${scale})`,
+          transformOrigin: "top left",
+          width: `${img2.offsetWidth}px`,
+          height: `${img2.offsetHeight}px`,
+        },
+      })
+      .then(function (blob) {
+        window.saveAs(blob, "image.png");
+      });
   }
-}
+};
