@@ -38,7 +38,7 @@ const Load = () => {
 };
 
 const Capture = (e) => {
-  window.location.assign("cam.html");
+  window.location.assign("cam");
   window.localStorage.setItem("type", e);
 };
 
@@ -213,9 +213,9 @@ const retake = () => {
 };
 const next = () => {
   if (window.localStorage.type == 1) {
-    window.location.assign("finish.html");
+    window.location.assign("finish");
   } else {
-    window.location.assign("finish.html");
+    window.location.assign("finish");
   }
   Save(JSON.stringify(images));
 };
