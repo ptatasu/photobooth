@@ -88,6 +88,13 @@
         </div>
     </div>
     <a class="button" id="download" onclick="Down()">Download</a>
+    <div class="modal-blocker"></div>
+    <div class="modal"><p class="label">Take Another Photo with this Layout?</p>
+        <div class="flex">
+            <div class="button btn-modal" id="yes" onmousedown="Yes()">Yes (Return to Camera)</div>
+            <div class="button btn-modal" id="no" onmousedown="No()">No (Return to Home)</div>
+        </div>
+    </div>
     <script src="js/download.js"></script>
     <script src="js/script.js"></script>
     <script>Load()</script>

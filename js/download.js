@@ -16,6 +16,8 @@
 //   });
 // });
 
+let modalblk = document.querySelector(".modal-blocker");
+let modal = document.querySelector(".modal");
 let body = document.getElementById("body");
 let img1 = document.querySelector(".img-container-1");
 let img2 = document.querySelector(".img-container-2");
@@ -248,6 +250,12 @@ const Down = () => {
       })
       .then(function (blob) {
         window.saveAs(blob, "image.png");
+        setTimeout(() => {
+          modal.style.bottom = "45%";
+          modal.style.transform = "scale(1)";
+          modalblk.style.display = "block";
+          body.style.overflow = "hidden";
+        }, 1500);
       })
       .catch((err) => {
         console.log(err);
@@ -266,6 +274,21 @@ const Down = () => {
       })
       .then(function (blob) {
         window.saveAs(blob, "image.png");
+        setTimeout(() => {
+          modal.style.bottom = "45%";
+          modal.style.transform = "scale(1)";
+          modalblk.style.display = "block";
+          body.style.overflow = "hidden";
+        }, 1500);
       });
   }
+};
+
+const Yes = () => {
+  body.style.overflow = "auto";
+  window.location.assign("cam");
+};
+const No = () => {
+  body.style.overflow = "auto";
+  window.location.assign("index");
 };
