@@ -236,7 +236,7 @@ const Down = () => {
   const scale = window.devicePixelRatio;
   if (window.localStorage.type == "1") {
     domtoimage
-      .toBlob(img1, {
+      .toJpeg(img1, {
         height: img1.offsetHeight * scale,
         width: img1.offsetWidth * scale,
         style: {

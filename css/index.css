@@ -11,6 +11,7 @@ body {
   user-select: none;
   font-size: 1.6rem;
   -webkit-tap-highlight-color: transparent;
+  /* background-color: #8A8A8A; */
 }
 
 .header {
@@ -121,4 +122,17 @@ body {
 }
 #style_2 {
   grid-area: btn2;
+}
+#modeSwitch{
+  position: absolute;
+  appearance: none;
+}
+#modeSwitch::before{
+  display: block;
+  content: ' ';
+  background-color: black;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 100px;
 }
